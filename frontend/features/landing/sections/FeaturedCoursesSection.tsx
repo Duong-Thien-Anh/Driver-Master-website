@@ -4,8 +4,8 @@ import { ScrollReveal } from "@/shared/components/ScrollReveal";
 
 export function FeaturedCoursesSection({ courses }: { courses: Course[] }) {
   return (
-    <ScrollReveal>
-      <section className="relative z-0 mx-auto w-[min(1180px,calc(100%-40px))] py-[66px] text-[#14284b] before:absolute before:inset-y-0 before:left-1/2 before:-z-10 before:w-screen before:-translate-x-1/2 before:bg-[#fff8ec] before:content-[''] max-[620px]:w-[calc(100%-32px)] max-[620px]:py-[50px]" id="khoa-hoc" aria-labelledby="courses-heading">
+    <ScrollReveal className="bg-[#fff8ec]">
+      <section className="mx-auto w-[min(1180px,calc(100%-40px))] py-[66px] text-[#14284b] max-[620px]:w-[calc(100%-32px)] max-[620px]:py-[50px]" id="khoa-hoc" aria-labelledby="courses-heading">
         <div className="mb-[31px] flex items-end justify-between gap-6 max-[620px]:mb-6 max-[620px]:flex-col max-[620px]:items-start max-[620px]:gap-[17px]">
           <div>
             <span className="inline-block font-[800] text-[12px] tracking-[.12em] text-[#1d5fe0]">KHÓA HỌC DÀNH CHO BẠN</span>

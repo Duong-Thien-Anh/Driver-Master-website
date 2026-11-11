@@ -9,12 +9,12 @@ const steps = [
 
 export function RoadmapStepsSection() {
   return (
-    <div className="grid grid-cols-2 gap-4 max-[680px]:grid-cols-1">
+    <div className="grid grid-cols-2 gap-4 max-[760px]:grid-cols-1">
       {steps.map(([number, title, description], index) => <article className={`flex items-start gap-4 rounded-[20px] border-[2.5px] border-[#14284b] bg-[#bdebd0] p-5 shadow-[5px_6px_0_#14284b] max-[680px]:gap-3 max-[680px]:p-4 ${index % 3 === 1 ? "bg-[#cfe8ff]" : index % 3 === 2 ? "bg-[#ffc93c]" : ""}`} key={number}>
           <span className="grid size-11 shrink-0 place-items-center rounded-[14px] border-[2.5px] border-[#14284b] bg-white shadow-[2px_3px_0_#14284b] font-['Baloo_2',var(--font-display),sans-serif] text-base font-extrabold">
             {number}
           </span>
-          <div>
+          <div className="min-w-0">
             <h2 className="mb-2 font-['Baloo_2',var(--font-display),sans-serif] text-[19px] font-extrabold">
               {title}
             </h2>

@@ -2,9 +2,13 @@ import type { Metadata } from "next";
 import "@/shared/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "SGAT — Học lái xe an toàn, vững tay từ ngày đầu",
+  title: "THỌ NGÔ ĐÀO TẠO LÁI XE",
   description:
     "Lộ trình học lái xe bài bản, giáo viên đồng hành và lịch học linh hoạt tại SGAT.",
+  icons: {
+    icon: { url: "/logo.png", type: "image/png" },
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

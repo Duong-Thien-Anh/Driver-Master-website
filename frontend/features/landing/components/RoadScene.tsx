@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import styles from "./RoadScene.module.css";
 
 const WIDTH = 600;
 const HEIGHT = 480;
@@ -132,28 +131,28 @@ export function RoadScene() {
   }, []);
 
   return (
-    <div ref={sceneRef} className={styles.scene} data-driving="false">
+    <div ref={sceneRef} className="group/scene relative aspect-[600/480] w-full overflow-hidden [container-type:inline-size] rounded-[30px] border-[3px] border-[#14284b] bg-[#cfe8ff] shadow-[8px_9px_0_#14284b] max-[520px]:rounded-[22px]" data-driving="false">
       <svg
         viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
         role="img"
         aria-label="Chiếc xe hoạt hình chạy trên con đường lộ trình học lái xe"
-        className={styles.svg}
+        className="absolute inset-0 block size-full"
       >
         <defs>
           <path id="learning-road" ref={roadRef} d={ROAD} />
         </defs>
 
-        <circle className={styles.inkStroke} cx="500" cy="64" r="30" fill="#FFC93C" />
-        <g className={styles.drift}>
-          <path className={styles.inkStroke} fill="#fff" d="M70 90 Q68 76 82 78 Q86 64 102 68 Q114 60 124 74 Q138 74 136 90Z" />
+        <circle className="stroke-[#14284b] stroke-[3] [stroke-linejoin:round]" cx="500" cy="64" r="30" fill="#FFC93C" />
+        <g className="animate-scene-drift motion-reduce:animate-none">
+          <path className="stroke-[#14284b] stroke-[3] [stroke-linejoin:round]" fill="#fff" d="M70 90 Q68 76 82 78 Q86 64 102 68 Q114 60 124 74 Q138 74 136 90Z" />
         </g>
-        <g className={styles.driftSlow}>
-          <path className={styles.inkStroke} fill="#fff" d="M300 62 Q298 48 312 50 Q316 36 332 40 Q344 32 354 46 Q368 46 366 62Z" />
+        <g className="animate-scene-drift-slow motion-reduce:animate-none">
+          <path className="stroke-[#14284b] stroke-[3] [stroke-linejoin:round]" fill="#fff" d="M300 62 Q298 48 312 50 Q316 36 332 40 Q344 32 354 46 Q368 46 366 62Z" />
         </g>
 
-        <path className={styles.inkStroke} fill="#BDEBD0" d="M0 250 Q120 190 260 240 T600 215 V480 H0Z" />
-        <path className={styles.inkStroke} fill="#8EDDB5" d="M0 330 Q150 290 300 335 T600 300 V480 H0Z" />
-        <g className={styles.inkStroke}>
+        <path className="stroke-[#14284b] stroke-[3] [stroke-linejoin:round]" fill="#BDEBD0" d="M0 250 Q120 190 260 240 T600 215 V480 H0Z" />
+        <path className="stroke-[#14284b] stroke-[3] [stroke-linejoin:round]" fill="#8EDDB5" d="M0 330 Q150 290 300 335 T600 300 V480 H0Z" />
+        <g className="stroke-[#14284b] stroke-[3] [stroke-linejoin:round]">
           <rect x="116" y="318" width="8" height="30" fill="#14284B" />
           <circle cx="120" cy="306" r="22" fill="#5ED3A8" />
           <rect x="398" y="276" width="8" height="30" fill="#14284B" />
@@ -164,7 +163,7 @@ export function RoadScene() {
 
         <use href="#learning-road" fill="none" stroke="#14284B" strokeWidth="54" strokeLinecap="round" />
         <use href="#learning-road" fill="none" stroke="#6E7FA3" strokeWidth="45" strokeLinecap="round" />
-        <use href="#learning-road" className={styles.roadDash} fill="none" stroke="#fff" strokeWidth="3" strokeDasharray="14 12" />
+        <use href="#learning-road" className="[stroke-dashoffset:0] group-data-[driving=true]/scene:animate-scene-dash motion-reduce:animate-none" fill="none" stroke="#fff" strokeWidth="3" strokeDasharray="14 12" />
 
         {points.map((point, index) => (
           <circle
@@ -174,18 +173,18 @@ export function RoadScene() {
             cx={point.x}
             cy={point.y}
             r="6"
-            className={styles.stopDot}
+            className="fill-white stroke-[#14284b] stroke-[3] data-[hit=true]:fill-[#5ed3a8]"
           />
         ))}
 
-        <g className={styles.inkStroke}>
+        <g className="stroke-[#14284b] stroke-[3] [stroke-linejoin:round]">
           <rect x="89" y="330" width="6" height="84" fill="#14284B" />
           <rect x="72" y="272" width="40" height="62" rx="10" fill="#14284B" />
         </g>
         {[
-          { key: "r", y: 286, className: styles.red },
-          { key: "y", y: 303, className: styles.yellow },
-          { key: "g", y: 320, className: styles.green },
+          { key: "r", y: 286, className: "data-[on=true]:fill-[#ff5a4f]" },
+          { key: "y", y: 303, className: "data-[on=true]:fill-[#ffc93c]" },
+          { key: "g", y: 320, className: "data-[on=true]:fill-[#36d399]" },
         ].map((lamp) => (
           <circle
             key={lamp.key}
@@ -194,7 +193,7 @@ export function RoadScene() {
             cx="92"
             cy={lamp.y}
             r="7"
-            className={`${styles.lamp} ${lamp.className}`}
+            className={`fill-[#3a4a6b] ${lamp.className}`}
           />
         ))}
 
@@ -203,7 +202,7 @@ export function RoadScene() {
           role="button"
           tabIndex={0}
           aria-label="Bấm để xe bấm còi"
-          className={styles.car}
+          className="cursor-pointer outline-none focus-visible:[&>g>path]:stroke-[#ffc93c]"
           onClick={beep}
           onKeyDown={(event) => {
             if (event.key === "Enter" || event.key === " ") {
@@ -212,19 +211,19 @@ export function RoadScene() {
             }
           }}
         >
-          <g className={styles.carBody}>
+          <g className="group-data-[driving=true]/scene:animate-scene-bob motion-reduce:animate-none">
             <ellipse cx="0" cy="27" rx="38" ry="5" fill="#14284B" opacity=".2" />
-            <path className={styles.inkStroke} fill="#1D5FE0" d="M-42 12V0Q-42-6-34-8L-22-10Q-14-26 2-26H14Q24-26 30-12L38-8Q44-6 44 2V12Q44 18 38 18H-36Q-42 18-42 12Z" />
-            <path className={styles.inkStroke} fill="#DDF0FF" d="M-19-9Q-12-22 2-22H12Q19-22 24-9Z" />
-            <circle className={styles.inkStroke} cx="-3" cy="-14.5" r="4.6" fill="#fff" strokeWidth="2" />
-            <circle className={styles.inkStroke} cx="11" cy="-14.5" r="4.6" fill="#fff" strokeWidth="2" />
+            <path className="stroke-[#14284b] stroke-[3] [stroke-linejoin:round]" fill="#1D5FE0" d="M-42 12V0Q-42-6-34-8L-22-10Q-14-26 2-26H14Q24-26 30-12L38-8Q44-6 44 2V12Q44 18 38 18H-36Q-42 18-42 12Z" />
+            <path className="stroke-[#14284b] stroke-[3] [stroke-linejoin:round]" fill="#DDF0FF" d="M-19-9Q-12-22 2-22H12Q19-22 24-9Z" />
+            <circle className="stroke-[#14284b] stroke-[3] [stroke-linejoin:round]" cx="-3" cy="-14.5" r="4.6" fill="#fff" strokeWidth="2" />
+            <circle className="stroke-[#14284b] stroke-[3] [stroke-linejoin:round]" cx="11" cy="-14.5" r="4.6" fill="#fff" strokeWidth="2" />
             <circle ref={(element) => { pupilRefs.current[0] = element; }} cx="-1.4" cy="-14.5" r="2.2" fill="#14284B" />
             <circle ref={(element) => { pupilRefs.current[1] = element; }} cx="12.6" cy="-14.5" r="2.2" fill="#14284B" />
-            <circle className={styles.inkStroke} cx="39" cy="3" r="4.5" fill="#FFC93C" strokeWidth="2" />
+            <circle className="stroke-[#14284b] stroke-[3] [stroke-linejoin:round]" cx="39" cy="3" r="4.5" fill="#FFC93C" strokeWidth="2" />
             <path d="M-40 8H34" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" opacity=".5" />
             {[-24, 24].map((cx) => (
-              <g key={cx} className={styles.wheel}>
-                <circle className={styles.inkStroke} cx={cx} cy="18" r="9.5" fill="#14284B" />
+              <g key={cx} className="origin-center [transform-box:fill-box] group-data-[driving=true]/scene:animate-scene-wheel motion-reduce:animate-none">
+                <circle className="stroke-[#14284b] stroke-[3] [stroke-linejoin:round]" cx={cx} cy="18" r="9.5" fill="#14284B" />
                 <circle cx={cx} cy="18" r="3.6" fill="#fff" />
                 <path d={`M${cx} 14V22`} stroke="#14284B" strokeWidth="2" />
               </g>
@@ -239,14 +238,14 @@ export function RoadScene() {
           ref={(element) => { labelRefs.current[index] = element; }}
           data-hit="false"
           style={{ left: `${(point.x / WIDTH) * 100}%`, top: `${(point.y / HEIGHT) * 100}%` }}
-          className={`${styles.stop} ${STOPS[index].below ? styles.below : styles.above}`}
+          className={`group/stop absolute flex items-center gap-[6px] rounded-xl border-[2.5px] border-[#14284b] bg-white py-[5px] pr-[9px] pl-[6px] font-playful text-[clamp(10px,2.6cqw,14px)] leading-none font-extrabold whitespace-nowrap text-[#14284b] shadow-[2px_3px_0_#14284b] transition-[background-color,scale] duration-[220ms] ease-[ease] data-[hit=true]:animate-scene-pop motion-reduce:animate-none max-[520px]:gap-1 max-[520px]:rounded-[9px] max-[520px]:py-1 max-[520px]:pr-[7px] max-[520px]:pl-[5px] ${STOPS[index].below ? "[transform:translate(-50%,20px)]" : "[transform:translate(-50%,calc(-100%_-_20px))]"}`}
         >
-          <i aria-hidden="true" />
+          <i className="size-[1.05em] shrink-0 rounded-full border-2 border-[#14284b] bg-white group-data-[hit=true]/stop:bg-[#36d399]" aria-hidden="true" />
           {STOPS[index].label}
         </div>
       ))}
 
-      <div ref={honkRef} aria-hidden="true" className={`${styles.honk} ${honk ? styles.honkVisible : ""}`}>
+      <div ref={honkRef} aria-hidden="true" className={`pointer-events-none absolute z-[2] rounded-[14px] border-[2.5px] border-[#14284b] bg-[#ffc93c] px-3 py-1 font-playful text-[clamp(11px,3cqw,16px)] font-extrabold whitespace-nowrap text-[#14284b] [transform:translate(-50%,-100%)] transition-opacity duration-150 ease-[ease] ${honk ? "opacity-100" : "opacity-0"}`}>
         Bíp bíp!
       </div>
     </div>

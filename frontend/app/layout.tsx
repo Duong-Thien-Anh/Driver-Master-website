@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="vi">
-      <body>{children}</body>
+    <html lang="vi" className="scroll-smooth motion-reduce:scroll-auto [&::view-transition-old(.page-exit)]:animate-page-exit [&::view-transition-new(.page-enter)]:animate-page-enter motion-reduce:[&::view-transition-old(.page-exit)]:animate-none motion-reduce:[&::view-transition-new(.page-enter)]:animate-none">
+      <body className="m-0 bg-paper font-body text-sm text-ink [&_a]:[-webkit-tap-highlight-color:transparent] [&_button]:[-webkit-tap-highlight-color:transparent]">{children}</body>
     </html>
   );
 }

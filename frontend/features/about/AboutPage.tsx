@@ -1,13 +1,11 @@
-import Link from "next/link";
+import { AboutIntroSection } from "./sections/AboutIntroSection";
+import { AboutInformationSection } from "./sections/AboutInformationSection";
 
 export function AboutPage() {
   return (
     <div className="mx-auto w-[min(1180px,calc(100%-40px))] py-[54px] pb-[72px] text-[#14284b] max-[680px]:w-[calc(100%-32px)] max-[680px]:py-10 max-[680px]:pb-[54px]">
-      <header className="mb-[34px] max-w-[790px] max-[680px]:mb-[25px]"><span className="inline-block font-sans text-xs font-extrabold tracking-[.12em] text-[#1d5fe0]">VỀ CHÚNG TÔI</span><h1 className="my-[10px] mb-3 font-['Baloo_2',var(--font-display),sans-serif] text-[clamp(42px,6vw,68px)] leading-[.98] font-extrabold tracking-[-.045em] max-[680px]:text-[clamp(40px,11vw,55px)]">Vững kỹ năng.<br />Vững hành trình.</h1><p className="m-0 max-w-[650px] font-sans text-base leading-[1.7] font-semibold text-[#4f6285] max-[680px]:text-sm">Một hành trình học lái tốt không chỉ hướng tới kỳ thi, mà còn hướng tới khả năng quan sát và sự tự tin trên mỗi con đường.</p></header>
-      <section className="grid grid-cols-2 gap-5 max-[760px]:grid-cols-1 max-[760px]:gap-[14px]" id="thong-tin" aria-label="Thông tin về trung tâm">
-        <article className="rounded-[21px] border-[2.5px] border-[#14284b] bg-[#bdebd0] p-[22px] shadow-[5px_6px_0_#14284b] max-[760px]:p-[17px]"><span className="grid size-11 place-items-center rounded-[14px] border-[2.5px] border-[#14284b] bg-[#ffc93c] shadow-[2px_3px_0_#14284b] font-['Baloo_2',var(--font-display),sans-serif] text-[19px] font-extrabold">01</span><h2 className="my-3 font-['Baloo_2',var(--font-display),sans-serif] text-[22px] leading-[1.1] font-extrabold">Học từ nền tảng</h2><p className="mb-3 font-sans text-[13px] leading-[1.65] font-semibold text-[#344664]">Làm quen với xe, hiểu luật giao thông, rồi rèn luyện từng thao tác trên sân tập trước khi thực hành đường trường. Mỗi bước là cơ hội xây dựng thói quen lái xe an toàn.</p><Link className="inline-flex items-center gap-2 font-sans text-[13px] font-extrabold text-[#1d5fe0] hover:underline hover:underline-offset-[3px]" href="/lo-trinh">Xem lộ trình học <span aria-hidden="true">↗</span></Link></article>
-        <article className="rounded-[21px] border-[2.5px] border-[#14284b] bg-[#cfe8ff] p-[22px] shadow-[5px_6px_0_#14284b] max-[760px]:p-[17px]"><span className="grid size-11 place-items-center rounded-[14px] border-[2.5px] border-[#14284b] bg-[#ffc93c] shadow-[2px_3px_0_#14284b] font-['Baloo_2',var(--font-display),sans-serif] text-[19px] font-extrabold">02</span><h2 className="my-3 font-['Baloo_2',var(--font-display),sans-serif] text-[22px] leading-[1.1] font-extrabold">Thông tin & chứng nhận</h2><p className="mb-3 font-sans text-[13px] leading-[1.65] font-semibold text-[#344664]">Câu chuyện trung tâm, giấy phép đào tạo, chứng chỉ và hồ sơ giảng viên đang được cập nhật. Các thông tin sẽ được đăng sau khi xác minh.</p><Link className="inline-flex items-center gap-2 font-sans text-[13px] font-extrabold text-[#1d5fe0] hover:underline hover:underline-offset-[3px]" href="/hoc-phi">Đội ngũ & cơ sở <span aria-hidden="true">↗</span></Link></article>
-      </section>
+      <AboutIntroSection />
+      <AboutInformationSection />
     </div>
   );
 }

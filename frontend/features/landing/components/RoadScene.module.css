@@ -1,0 +1,167 @@
+.scene {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 600 / 480;
+  overflow: hidden;
+  container-type: inline-size;
+  border: 3px solid #14284b;
+  border-radius: 30px;
+  background: #cfe8ff;
+  box-shadow: 8px 9px 0 #14284b;
+}
+
+.svg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.inkStroke {
+  stroke: #14284b;
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.drift { animation: drift 16s ease-in-out infinite alternate; }
+.driftSlow { animation: drift 22s ease-in-out infinite alternate; }
+
+.roadDash {
+  stroke-dashoffset: 0;
+}
+
+.scene[data-driving="true"] .roadDash {
+  animation: dash 500ms linear infinite;
+}
+
+.stopDot {
+  fill: #fff;
+  stroke: #14284b;
+  stroke-width: 3;
+}
+
+.stopDot[data-hit="true"] {
+  fill: #5ed3a8;
+}
+
+.lamp {
+  fill: #3a4a6b;
+}
+
+.lamp.red[data-on="true"] { fill: #ff5a4f; }
+.lamp.yellow[data-on="true"] { fill: #ffc93c; }
+.lamp.green[data-on="true"] { fill: #36d399; }
+
+.car {
+  cursor: pointer;
+  outline: none;
+}
+
+.car:focus-visible .carBody > path {
+  stroke: #ffc93c;
+}
+
+.scene[data-driving="true"] .carBody {
+  animation: bob 450ms ease-in-out infinite alternate;
+}
+
+.wheel {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.scene[data-driving="true"] .wheel {
+  animation: wheel 500ms linear infinite;
+}
+
+.stop {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 9px 5px 6px;
+  border: 2.5px solid #14284b;
+  border-radius: 12px;
+  background: #fff;
+  color: #14284b;
+  box-shadow: 2px 3px 0 #14284b;
+  font: 800 clamp(10px, 2.6cqw, 14px) / 1 "Baloo 2", var(--font-display), sans-serif;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  transition: background-color 220ms ease, scale 220ms ease;
+}
+
+.stop i {
+  width: 1.05em;
+  height: 1.05em;
+  flex: 0 0 1.05em;
+  border: 2px solid #14284b;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.stop[data-hit="true"] {
+  animation: pop 450ms ease;
+}
+
+.stop[data-hit="true"] i {
+  background: #36d399;
+}
+
+.above { transform: translate(-50%, calc(-100% - 20px)); }
+.below { transform: translate(-50%, 20px); }
+
+.honk {
+  position: absolute;
+  z-index: 2;
+  padding: 4px 12px;
+  border: 2.5px solid #14284b;
+  border-radius: 14px;
+  background: #ffc93c;
+  color: #14284b;
+  font: 800 clamp(11px, 3cqw, 16px) "Baloo 2", var(--font-display), sans-serif;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -100%);
+  transition: opacity 150ms ease;
+  white-space: nowrap;
+}
+
+.honkVisible { opacity: 1; }
+
+@keyframes drift {
+  to { transform: translateX(26px); }
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: 26; }
+}
+
+@keyframes wheel {
+  to { rotate: 360deg; }
+}
+
+@keyframes bob {
+  to { transform: translateY(-1.6px); }
+}
+
+@keyframes pop {
+  50% { scale: 1.18; }
+}
+
+@media (max-width: 520px) {
+  .scene { border-radius: 22px; }
+  .stop { gap: 4px; padding: 4px 7px 4px 5px; border-radius: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drift,
+  .driftSlow,
+  .scene[data-driving="true"] .roadDash,
+  .scene[data-driving="true"] .carBody,
+  .scene[data-driving="true"] .wheel,
+  .stop[data-hit="true"] {
+    animation: none;
+  }
+}

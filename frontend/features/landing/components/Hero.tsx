@@ -14,7 +14,7 @@ export function Hero() {
         <h1 className="mb-5 max-w-[11ch] font-['Baloo_2',var(--font-display),sans-serif] text-[clamp(40px,6.2vw,72px)] leading-none font-extrabold tracking-[-.045em] text-[#14284b] max-[899px]:max-w-[13ch] max-[899px]:text-[clamp(42px,10vw,68px)] max-[520px]:mb-[15px] max-[520px]:text-[clamp(40px,12vw,56px)]">Bật đèn xanh cho hành trình lái xe của bạn</h1>
         <p className="mb-[30px] max-w-[30em] font-['Nunito',var(--font-body),sans-serif] text-base leading-[1.65] font-medium text-[#4f6285] max-[520px]:mb-[22px] max-[520px]:text-sm">
           Học từng bước, vững từng kỹ năng: lý thuyết, sa hình, đường trường.
-          Thầy cô đi cùng bạn đến ngày nhận bằng.
+          Thầy Thọ đi cùng bạn đến ngày nhận bằng.
         </p>
 
         <div className="mb-[34px] flex flex-wrap gap-[14px] max-[520px]:mb-[27px] max-[520px]:gap-[11px]">

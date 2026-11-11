@@ -8,7 +8,7 @@ export function SiteHeader() {
         <span data-logo-dock-target className="grid h-[46px] w-[46px] shrink-0 place-items-center overflow-hidden rounded-full border-[2.5px] border-[#14284b] bg-white shadow-[2px_3px_0_#14284b] max-[700px]:h-10 max-[700px]:w-10">
           <Image className="h-full w-full rounded-full object-cover" src="/logo.png" alt="" width={40} height={40} priority />
         </span>
-        <span className="grid leading-[1.1]"><strong className="font-display text-[23px] font-[800] max-[900px]:text-[20px] max-[700px]:text-[19px]">Lộ Trình.</strong><small className="mt-0.5 font-[800] text-[10px] tracking-[.08em] text-[#4f6285] max-[700px]:text-[8px]">ĐÀO TẠO LÁI XE</small></span>
+        <span className="grid leading-[1.1]"><strong className="font-display text-[23px] font-[800] max-[900px]:text-[20px] max-[700px]:text-[19px]">TTGDNN VÀ SÁT HẠCH LÁI XE</strong><small className="mt-0.5 font-[800] text-[10px] tracking-[.08em] text-[#4f6285] max-[700px]:text-[8px]">TỈNH BÀ RỊA - VŨNG TÀU</small></span>
       </Link>
       <nav className="mx-auto flex items-center justify-center gap-[clamp(13px,2.1vw,27px)] whitespace-nowrap font-[800] text-[13px] text-[#344664] max-[900px]:gap-3 max-[900px]:text-[12px] max-[700px]:col-span-2 max-[700px]:row-start-2 max-[700px]:-mx-0.5 max-[700px]:justify-start max-[700px]:gap-[14px] max-[700px]:overflow-x-auto max-[700px]:py-[3px] max-[700px]:px-0.5 max-[700px]:pb-1.5 max-[700px]:text-[11px]">
         <Link className="py-2 hover:text-[#1d5fe0]" href="/">Trang chủ</Link>

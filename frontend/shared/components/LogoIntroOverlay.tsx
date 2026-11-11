@@ -132,8 +132,8 @@ export function LogoIntroOverlay() {
     >
       <div className="relative size-[var(--size)]">
         <div ref={stageRef} className="absolute inset-0 z-[1] [perspective:1200px] transition-transform duration-[1100ms] ease-[cubic-bezier(.65,0,.25,1)] motion-reduce:transition-none">
-          <span data-visible={showWords} className="absolute top-1/2 left-1/2 z-0 whitespace-nowrap font-display text-[calc(var(--size)*.19)] leading-none font-bold text-ink opacity-0 [transform:translate(-50%,-50%)_scale(.4)] transition-[transform,opacity] duration-[850ms] ease-[cubic-bezier(.2,.9,.25,1.08)] data-[visible=true]:opacity-100 data-[visible=true]:[transform:translate(calc(-100%_-_var(--size)*.5_-_12px),-50%)_scale(1)] motion-reduce:transition-none">Lộ</span>
-          <span data-visible={showWords} className="absolute top-1/2 left-1/2 z-0 whitespace-nowrap font-display text-[calc(var(--size)*.19)] leading-none font-bold text-ink opacity-0 [transform:translate(-50%,-50%)_scale(.4)] transition-[transform,opacity] duration-[850ms] ease-[cubic-bezier(.2,.9,.25,1.08)] data-[visible=true]:opacity-100 data-[visible=true]:[transform:translate(calc(var(--size)*.5_+_12px),-50%)_scale(1)] motion-reduce:transition-none">Trình</span>
+          <span data-visible={showWords} className="absolute top-1/2 left-1/2 z-0 whitespace-nowrap font-display text-[calc(var(--size)*.19)] leading-none font-bold text-ink opacity-0 [transform:translate(-50%,-50%)_scale(.4)] transition-[transform,opacity] duration-[850ms] ease-[cubic-bezier(.2,.9,.25,1.08)] data-[visible=true]:opacity-100 data-[visible=true]:[transform:translate(calc(-100%_-_var(--size)*.5_-_12px),-50%)_scale(1)] motion-reduce:transition-none">NGÔ TRUNG</span>
+          <span data-visible={showWords} className="absolute top-1/2 left-1/2 z-0 whitespace-nowrap font-display text-[calc(var(--size)*.19)] leading-none font-bold text-ink opacity-0 [transform:translate(-50%,-50%)_scale(.4)] transition-[transform,opacity] duration-[850ms] ease-[cubic-bezier(.2,.9,.25,1.08)] data-[visible=true]:opacity-100 data-[visible=true]:[transform:translate(calc(var(--size)*.5_+_12px),-50%)_scale(1)] motion-reduce:transition-none">VĨNH THỌ</span>
           <div ref={coinRef} className="relative z-[1] size-full [transform-style:preserve-3d] [&>*]:absolute [&>*]:inset-0 [&>*]:rounded-full" aria-hidden="true">
             {Array.from({ length: RIM_LAYERS }, (_, index) => {
               const depth = index / (RIM_LAYERS - 1);
@@ -179,7 +179,7 @@ export function LogoIntroOverlay() {
       </div>
       <div className="grid justify-items-center gap-[5px] text-center transition-opacity duration-[400ms] ease-[ease] group-data-[docked=true]/logo:opacity-0 motion-reduce:transition-none">
         <strong className="font-display text-xl font-bold">TTGDNN VÀ SÁT HẠCH LÁI XE.</strong>
-        <span className="text-[11px] tracking-[.07em] text-muted uppercase">TỈNH BÀ RỊA - VŨNG TAU</span>
+        <span className="text-[11px] tracking-[.07em] text-muted uppercase">TỈNH BÀ RỊA - VŨNG TÀU</span>
       </div>
     </div>
   );

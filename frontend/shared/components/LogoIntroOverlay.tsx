@@ -62,12 +62,14 @@ export function LogoIntroOverlay() {
     let settle: Settle = null;
 
     if (reduceMotion) {
-      angle = 0;
-      coin.style.transform = "rotateX(-8deg) rotateY(0deg)";
-      setShowWords(true);
-      dock(true);
-      finishTimer = window.setTimeout(() => setVisible(false), 150);
+      frameId = requestAnimationFrame(() => {
+        coin.style.transform = "rotateX(-8deg) rotateY(0deg)";
+        setShowWords(true);
+        dock(true);
+        finishTimer = window.setTimeout(() => setVisible(false), 150);
+      });
       return () => {
+        cancelAnimationFrame(frameId);
         window.clearTimeout(finishTimer);
       };
     }

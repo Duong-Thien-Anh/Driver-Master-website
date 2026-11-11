@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { RoadScene } from "./RoadScene";
+import { trainingLocation } from "@/features/courses/data/course-catalog";
 
 const LICENSES = [
   { label: "Hạng B · Ô tô", color: "bg-[#ffc93c]", tilt: "-rotate-[3deg]" },
-  { label: "Hạng C · Xe tải", color: "bg-[#ff7a59]", tilt: "rotate-[2deg]" },
+  { label: "Hạng C1 · Xe tải", color: "bg-[#ff7a59]", tilt: "rotate-[2deg]" },
+  { label: "A · Mô tô", color: "bg-[#e3d7ff]", tilt: "rotate-[2deg]" },
   { label: "A1 · Xe máy", color: "bg-[#5ed3a8]", tilt: "-rotate-[1.5deg]" },
 ];
 
@@ -13,7 +15,7 @@ export function Hero() {
       <div className="min-w-0">
         <h1 className="mb-5 max-w-[11ch] font-['Baloo_2',var(--font-display),sans-serif] text-[clamp(40px,6.2vw,72px)] leading-none font-extrabold tracking-[-.045em] text-[#14284b] max-[899px]:max-w-[13ch] max-[899px]:text-[clamp(42px,10vw,68px)] max-[520px]:mb-[15px] max-[520px]:text-[clamp(34px,11vw,56px)]">Bật đèn xanh cho hành trình lái xe của bạn</h1>
         <p className="mb-[30px] max-w-[30em] font-['Nunito',var(--font-body),sans-serif] text-base leading-[1.65] font-medium text-[#4f6285] max-[520px]:mb-[22px] max-[520px]:text-sm">
-          Học từng bước, vững từng kỹ năng: lý thuyết, sa hình, đường trường.
+          Đào tạo lái xe ô tô, mô tô hạng A1, A, B và C1 tại {trainingLocation}.
           Thầy Thọ đi cùng bạn đến ngày nhận bằng.
         </p>
 

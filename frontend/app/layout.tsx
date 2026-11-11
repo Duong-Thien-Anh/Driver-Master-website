@@ -4,7 +4,7 @@ import "@/shared/styles/globals.css";
 export const metadata: Metadata = {
   title: "THỌ NGÔ ĐÀO TẠO LÁI XE",
   description:
-    "Lộ trình học lái xe bài bản, giáo viên đồng hành và lịch học linh hoạt tại SGAT.",
+    "Đào tạo lái xe ô tô, mô tô hạng A1, A, B số tự động, B số sàn và C1 tại phường Phước Thắng, Vũng Tàu. Xem khóa học và học phí.",
   icons: {
     icon: { url: "/logo.png", type: "image/png" },
     apple: "/logo.png",

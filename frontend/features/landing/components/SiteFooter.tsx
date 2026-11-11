@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { trainingLocation } from "@/features/courses/data/course-catalog";
 
 export function SiteFooter() {
   return (
@@ -15,7 +16,7 @@ export function SiteFooter() {
           <p className="m-0 w-max shrink-0 pr-[.06em] text-center font-display text-[10cqw] leading-none font-bold tracking-[-.06em] whitespace-nowrap lg:text-[11cqw]">NGOTRUNGVINHTHO</p>
         </div>
         <div className="mt-4 flex flex-col items-center gap-2 text-center font-sans text-[10px] leading-relaxed font-bold tracking-[.1em] uppercase text-[#4f6285] sm:mt-6 sm:flex-row sm:justify-between sm:text-left">
-          <span>Vững tay lái · Vững hành trình</span>
+          <span>Học tại {trainingLocation}</span>
           <a href="#" className="inline-flex min-h-11 items-center gap-2 text-[#14284b] transition-colors hover:text-[#1d5fe0]">
             Về đầu trang <span aria-hidden="true">↑</span>
           </a>

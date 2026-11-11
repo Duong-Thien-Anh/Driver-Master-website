@@ -10,6 +10,25 @@ npm install
 npm run dev
 ```
 
+## Code checks
+
+Run these commands from `frontend/`:
+
+```bash
+npm run lint       # ESLint: Next.js, React Hooks, accessibility, and TypeScript rules
+npm run lint:fix   # Apply fixes supported by ESLint, then report remaining issues
+npm run typecheck  # TypeScript compiler checks
+npm run build     # Production build
+```
+
+ESLint configuration lives in `eslint.config.mjs`. Both lint commands fail on warnings.
+Generated files and local tool state are excluded. TypeScript is kept on 6.0 because
+the TypeScript ESLint parser currently requires TypeScript below 6.1.
+
+This uses the [official Next.js ESLint configuration](https://nextjs.org/docs/app/api-reference/config/eslint).
+Next.js supports ESLint 10, but some bundled plugins still declare ESLint 9 peer ranges;
+npm may report peer warnings. Lint, typecheck, build, and an `npm ci --dry-run` have been verified.
+
 ## Structure
 
 - `app/` — Next.js routes, layouts, and server-side data loading.
@@ -23,7 +42,10 @@ npm run dev
 - `app/api/courses/` — JSON API route backed by the courses service.
 - `app/api/inquiries/` — registration endpoint; configure `LEAD_WEBHOOK_URL` to forward submissions.
 
-Course content currently lives in `server/courses/` as in-memory data. Copy `.env.example` and set `LEAD_WEBHOOK_URL` to enable inquiry delivery.
+Course names, vehicle descriptions, tuition amounts (VND), and training location live in
+`features/courses/data/course-catalog.ts`. Course cards, both tuition lists, registration
+choices, and the courses API use this catalog. `server/courses/` exposes the server-side
+course service. Copy `.env.example` and set `LEAD_WEBHOOK_URL` to enable inquiry delivery.
 
 The sibling `backend/` directory is intentionally empty and reserved for a future Java backend. Current API handlers run inside this Next.js application.
 

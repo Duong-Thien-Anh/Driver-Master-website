@@ -36,7 +36,7 @@ export function ScrollReveal({ children, delay = 0, className = "" }: Props) {
   return (
     <div
       ref={ref}
-      className={`w-full data-[reveal-armed=true]:not-data-[revealed=true]:translate-y-[26px] data-[reveal-armed=true]:not-data-[revealed=true]:opacity-0 data-[revealed=true]:translate-y-0 data-[revealed=true]:opacity-100 data-[revealed=true]:transition-[opacity,transform] data-[revealed=true]:duration-[650ms] data-[revealed=true]:ease-[cubic-bezier(.2,.75,.25,1)] data-[revealed=true]:delay-[var(--reveal-delay)] motion-reduce:!transform-none motion-reduce:!opacity-100 motion-reduce:!transition-none ${className}`}
+      className={`w-full data-[reveal-armed=true]:not-data-[revealed=true]:translate-y-6.5 data-[reveal-armed=true]:not-data-[revealed=true]:opacity-0 data-[revealed=true]:translate-y-0 data-[revealed=true]:opacity-100 data-[revealed=true]:transition-[opacity,transform] data-[revealed=true]:duration-650 data-[revealed=true]:ease-[cubic-bezier(.2,.75,.25,1)] data-[revealed=true]:delay-(--reveal-delay) motion-reduce:transform-none! motion-reduce:opacity-100! motion-reduce:transition-none! ${className}`}
       style={{ "--reveal-delay": `${delay}ms` } as CSSProperties}
     >
       {children}
